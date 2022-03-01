@@ -1,50 +1,54 @@
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
-    <title>Map of Canada</title>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>Map of Canada</title>
+  <style>
+    html, body, #viewDiv {
+      padding: 0;
+      margin: 0;
+      height: 100%;
+      width: 100%;
+    }
+  </style>
+  <link rel="stylesheet" href="https://js.arcgis.com/4.22/esri/themes/light/main.css">
+  <script src="https://js.arcgis.com/4.22/"></script>
 
-    <style>
-      html,
-      body,
-      #viewDiv {
-        padding: 0;
-        margin: 0;
-        height: 100%;
-        width: 100%;
-      }
-    </style>
-    
-    <link rel="stylesheet" href="https://js.arcgis.com/4.22/esri/themes/light/main.css">
-    <script src="https://js.arcgis.com/4.22/"></script>
-    
-    <script>
-      require([
-        "esri/config",
-        "esri/Map", 
-        "esri/views/MapView",
-        "esri/layers/FeatureLayer], 
-        
-        function (esriConfig,Map, MapView, FeatureLayer) {
-    
-        esriConfig.apiKey = "AAPK25389674c45448c7a08d45f2e4003e11zLBuT60Y38chejL3-nQ4QdOIhF7mYakYIt1Nira8mhuNr7HdIAW1aI5eW7MW55ha";
+  <script>
+  require([
+    "esri/config",
+    "esri/Map",
+    "esri/views/MapView",
 
-        const map = new Map({
-          basemap: "arcgis-topographic" // Basemap layer service
-        });
-        
-        const view = new MapView({
-          map: map,
-          center: [-101.9260, 57.8796], // Longitude, latitude
-          zoom: 4, // Zoom level
-          container: "viewDiv" // Div element
-        });
-        
-      });
-    </script>
+    "esri/layers/FeatureLayer"
 
-  </head>
-  <body>
-    <div id="viewDiv"></div>
-  </body>
+  ], function(esriConfig,Map, MapView, FeatureLayer) {
+
+  esriConfig.apiKey = "AAPK25389674c45448c7a08d45f2e4003e11zLBuT60Y38chejL3-nQ4QdOIhF7mYakYIt1Nira8mhuNr7HdIAW1aI5eW7MW55ha";
+
+  const map = new Map({
+    basemap: "arcgis-topographic"
+  });
+
+  const view = new MapView({
+    container: "viewDiv",
+    map: map,
+    center: [-102.031,57.891],
+    zoom: 3
+  });
+
+// Canadian provinces and territories (polygons)
+  const canadaLayer = new FeatureLayer({
+    url: "https://luna.flemingcollege.ca/arcgis/rest/services/bigbrains60/CanadaLAldous/MapServer/0"
+  });
+
+  map.add(canadaLayer, 0);
+
+  });
+</script>
+
+</head>
+<body>
+  <div id="viewDiv"></div>
+</body>
 </html>
