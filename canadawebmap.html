@@ -17,7 +17,6 @@
   <script>
     require([
       "esri/config",
-      "esri/Map",
       "esri/WebMap",
       "esri/views/MapView",
       "esri/widgets/ScaleBar",
@@ -34,7 +33,6 @@
 
       const view = new MapView({
         container: "viewDiv",
-
         map: webmap
 
       });
@@ -42,14 +40,14 @@
       const scalebar = new ScaleBar({
         view: view
       });
-
       view.ui.add(scalebar, "bottom-left");
-
-    const legend = new Legend ({
+      
+      const legend = new Legend ({
         view: view
       });
       view.ui.add(legend, "top-right");
-
+      
+      
   });
   </script>
 </head>
