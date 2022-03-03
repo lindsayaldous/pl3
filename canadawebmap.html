@@ -6,6 +6,7 @@
 	- swapped out web map for Canada map created for a previous week 6 checklist item
 	- removed legend widget because it sort of defeated the "click around and view the province names" idea
 	- changed default scale to use metric units and take on the "ruler" style
+	- tried adding a compass widget but it wasn't co-operating
 	- add textbox using the same HTML/CSS from a pl2 page with slight modifications to style -->
   
   <meta charset="utf-8">
@@ -78,11 +79,10 @@
       });
       view.ui.add(scalebar, "bottom-left");
           
-      const compassWidget = new Compass ({
-	      view: view
-      });
-	// Add the Compass widget to the top left corner of the view
-	view.ui.add(compassWidget, "top-left");
+	const compassWidget = new Compass({
+	  view: view
+	});
+      view.ui.add(compassWidget, "top-left");
 	    
   });
   </script>
@@ -94,8 +94,7 @@
 		voir une fenêtre avec leurs noms officiels en français et anglais!</p>
 	      	      <p> --- </p>
 	       <p> Canada is a country with ten provinces and three territories. Try clicking one of them 
-		on the map to see a pop-up with their official French and English names, or pick one of
-		the bookmarks to zoom right to it! </p>
+		on the map to see a pop-up with their official French and English names! </p>
       <div id="text">
       </div>
     </div>
