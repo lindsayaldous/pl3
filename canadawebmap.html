@@ -5,6 +5,7 @@
   <!-- Started with the HTML/JS for the Display a Web Map tutorial, then:
 	- swapped out web map for Canada map created for a previous week 6 checklist item
 	- removed legend widget because it sort of defeated the "click around and view the province names" idea
+	- changed default scale to use metric units and take on the "ruler" style
 	- add textbox using the same HTML/CSS from a pl2 page with slight modifications to style -->
   
   <meta charset="utf-8">
@@ -19,8 +20,8 @@
 	  }
         #title{
           position: absolute;
-          top: 50px; /* these were 75 */
-          left: 50px;
+          top: 60px; /* these were 75 */
+          left: 60px;
           z-index: 5;
           background-color: #570000;
           color: #FFFFFF;
@@ -29,7 +30,7 @@
           font-family: "Verdana";
           line-height: 25px;
           padding-left: 15px;
-          max-width: 400px;	/* this was 300 */
+          max-width: 350px;	/* this was 300 */
         }
         #text{
           line-height: 18px;
@@ -76,12 +77,7 @@
 	style: "ruler"
       });
       view.ui.add(scalebar, "bottom-left");
-      
-      // const legend = new Legend ({
-      //  view: view
-      // });
-      // view.ui.add(legend, "top-right");
-      
+          
       
   });
   </script>
