@@ -21,7 +21,7 @@
 	  }
         #title{
           position: absolute;
-          top: 60px; /* these were 75 */
+          top: 60px;
           left: 60px;
           z-index: 5;
           background-color: #570000;
@@ -31,10 +31,10 @@
           font-family: "Verdana";
           line-height: 25px;
           padding-left: 15px;
-          max-width: 350px;	/* this was 300 */
+          max-width: 350px;
         }
         #text{
-          line-height: 6px;	/* this was 18, then 12*/
+          line-height: 6px;
         }
 		
 		h1 {
@@ -55,8 +55,9 @@
       "esri/WebMap",
       "esri/views/MapView",
       "esri/widgets/ScaleBar",
-      "esri/widgets/Legend"
-    ], function(esriConfig, WebMap, MapView, ScaleBar, Legend) {
+      "esri/widgets/Legend",
+      "esri/widgets/Compass"
+    ], function(esriConfig, WebMap, MapView, ScaleBar, Legend, Compass) {
 
     esriConfig.apiKey = "AAPK9a43d3eaf123489784647347e640569eGXYwCDUuhfNCGI7nSfoXxH_M_ejNgJIgn-4gIl2e-QmOFYs8vhDF4QmyV6VVTbBE";
 
