@@ -33,7 +33,7 @@
           max-width: 350px;	/* this was 300 */
         }
         #text{
-          line-height: 18px;
+          line-height: 12px;	/* this was 18 */
         }
 		
 		h1 {
@@ -78,24 +78,28 @@
       });
       view.ui.add(scalebar, "bottom-left");
           
-      
+      const compassWidget = new Compass ({
+	      view: view
+      });
+	// Add the Compass widget to the top left corner of the view
+	view.ui.add(compassWidget, "top-left");
+	    
   });
   </script>
 </head>
 <body>
       <div id="title">
-	      <h1>Les provinces et territoires du Canada / Canada's Provinces and Territories</h1>
+	      <h1>Les provinces et territoires du Canada / <br> Canada's Provinces and Territories</h1>
 	      <p> Canada est un pays avec dix provinces et trois territoires. Cliquez sur la carte pour 
-		voir une fenêtre avec leurs noms officiels en français et anglais !</p>
+		voir une fenêtre avec leurs noms officiels en français et anglais!</p>
 	      	      <p> --- </p>
 	       <p> Canada is a country with ten provinces and three territories. Try clicking one of them 
-		on the map to see a pop-up with their official French and English names! </p>
+		on the map to see a pop-up with their official French and English names, or pick one of
+		the bookmarks to zoom right to it! </p>
       <div id="text">
       </div>
     </div>
-  
-<div id="webmap"></div>
-	
-  <div id="viewDiv"></div>
+    <div id="webmap"></div>
+    <div id="viewDiv"></div>
 </body>
 </html>
